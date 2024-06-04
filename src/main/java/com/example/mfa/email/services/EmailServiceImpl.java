@@ -22,6 +22,7 @@ public class EmailServiceImpl implements EmailService {
         this.emailSender = emailSender;
     }
 
+
     public void sendEmail(EmailRequest request) throws MailException {
         try {
             emailSender.send(getPreparedMessage(request));

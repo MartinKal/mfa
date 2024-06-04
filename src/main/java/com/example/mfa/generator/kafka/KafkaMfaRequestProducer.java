@@ -5,6 +5,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+/**
+ * Service for producing Kafka messages related to MFA code generation requests.
+ */
 @Service
 public class KafkaMfaRequestProducer {
     public static final String TOPIC = "generate-mfa-code";
@@ -15,6 +18,10 @@ public class KafkaMfaRequestProducer {
         this.kafkaTemplate = kafkaTemplate;
     }
 
+    /**
+     * Sends an MFA code generation request to the Kafka topic.
+     * @param email the email address for which to generate an MFA code
+     */
     public void sendMfaCodeGenerationRequest(String email) {
         logger.info("Received mfa code generation request for email: {}", email);
         kafkaTemplate.send(TOPIC, email);

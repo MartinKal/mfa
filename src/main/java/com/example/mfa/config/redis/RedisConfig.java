@@ -8,6 +8,10 @@ import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
+/**
+ * Configuration class for setting up Redis.
+ * This configuration class sets up the necessary beans and properties for connecting to a Redis instance.
+ */
 @Configuration
 public class RedisConfig {
     @Value("${spring.redis.host}")
